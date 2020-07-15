@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import Proptimus from './Proptimus'
+import ProptimusOmega from './proptimusOmega'
 
 export default class App extends React.Component {
   constructor(props) {
@@ -11,12 +13,13 @@ export default class App extends React.Component {
         "Proptimus Beta": "https://library.kissclipart.com/20181004/jbw/kissclipart-alola-exeggutor-height-clipart-optimus-prime-trans-6afe73e9efab0cac.png",
         "Proptimus Omega": "https://cdn.shopify.com/s/files/1/0076/4103/8906/products/Transformers-Movie-Studio-Series-38-Voyager-G1-Optimus-Prime-Semi-truck-Render_1024x1024.png?v=1549582726",
       },
+      activeProp: null,
     }
   }
 
 
   callForBadHelp = (event) => {
-
+    console.log('callForBad')
   }
 
   callForBetterHelp = (event) => {
@@ -36,12 +39,12 @@ export default class App extends React.Component {
       <div className="App">
         <header className="App-header">
           <img
-            src={}
+            src={this.state.callForHelp}
             className="App-logo"
             alt="logo"
+            onClick={event => this.callForBadHelp(event)}
           />
-
-          {this.state && this.state.activeProp === "" /*Which Proptobot should be checked for?*/ &&
+          {this.state && this.state.activeProp === "Proptimus Omega" &&
           <>
             <p className="">Will this do, human?</p>
             <Proptimus /*Specify your Proptobot here.*/
